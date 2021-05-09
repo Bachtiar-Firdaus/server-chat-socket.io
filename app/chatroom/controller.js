@@ -22,4 +22,13 @@ async function createChatroom(req, res, next) {
   } catch (error) {}
 }
 
-module.exports = { createChatroom };
+async function getAllChatrooms(req, res, next) {
+  try {
+    const chatrooms = await Chatroom.find({});
+    res.json({
+      message: "success",
+      data: chatrooms,
+    });
+  } catch (error) {}
+}
+module.exports = { createChatroom, getAllChatrooms };

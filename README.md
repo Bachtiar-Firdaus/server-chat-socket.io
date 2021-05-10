@@ -20,6 +20,7 @@ Pembuatan Backend REST API dari SERVER CHAT SOCKET.IO menggunakan beberapa depen
 - "mongoose": "^5.12.7",
 - "morgan": "~1.9.1",
 - "nodemon": "^2.0.6"
+- "socket.io": "^4.0.2"
 
 ## **Dokumentasi API**
 

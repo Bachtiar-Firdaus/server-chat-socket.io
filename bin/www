@@ -37,7 +37,7 @@ io.use(async (socket, next) => {
   } catch (error) {}
 });
 
-io.on("connection", (socket) => {
+io.on("connect", (socket) => {
   console.log("Connected " + socket.userId);
   //menghentikan koneksi
   socket.on("disconnect", () => {

@@ -24,10 +24,12 @@ var server = http.createServer(app);
 
 const io = require("socket.io")(server);
 const jwt = require("jwt-then");
+const cors = require("cors");
 
 const Message = require("../app/message/model");
 const User = require("../app/user/model");
 
+app.use(cors());
 io.use(async (socket, next) => {
   try {
     const token = socket.handshake.query.token;

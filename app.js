@@ -6,7 +6,6 @@ var logger = require("morgan");
 const cors = require("cors");
 
 const userRouter = require("./app/user/router");
-const messageRouter = require("./app/message/router");
 const chatroomRouter = require("./app/chatroom/router");
 
 var app = express();
@@ -24,7 +23,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/api", userRouter);
-app.use("/api", messageRouter);
 app.use("/api", chatroomRouter);
 
 // catch 404 and forward to error handler

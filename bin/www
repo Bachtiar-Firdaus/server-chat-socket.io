@@ -8,9 +8,6 @@ var app = require("../app");
 var debug = require("debug")("server-chat-socket.io:server");
 var http = require("http");
 
-const cors = require("cors");
-app.use(cors());
-
 const db = require("../database");
 /**
  * Get port from environment and store in Express.
@@ -24,13 +21,13 @@ app.set("port", port);
  */
 
 var server = http.createServer(app);
-
+const cors = require("cors");
+server.use(cors());
 const io = require("socket.io")(server);
 const jwt = require("jwt-then");
 
 const Message = require("../app/message/model");
 const User = require("../app/user/model");
-
 io.use(async (socket, next) => {
   try {
     const token = socket.handshake.query.token;
